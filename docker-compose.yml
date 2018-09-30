@@ -1,0 +1,7 @@
+version: "3"
+services:
+
+  target:
+    image: sjj050121014/jdk8-mvn:1.0
+    volumes:
+      - .:/root
