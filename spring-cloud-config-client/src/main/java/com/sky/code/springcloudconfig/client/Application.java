@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class Application {
 
     @Value("${hello.world}")
-    String name = "Hello World";
+    String name;
 
     @RequestMapping("/")
     public String home() {

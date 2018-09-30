@@ -8,7 +8,6 @@
     <artifactId>spring-cloud-code</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>spring-cloud-config</module>
         <module>spring-cloud-config-server</module>
         <module>spring-cloud-config-client</module>
     </modules>
@@ -39,6 +38,10 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
