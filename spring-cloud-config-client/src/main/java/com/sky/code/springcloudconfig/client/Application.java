@@ -12,16 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Application {
 
-    @Value("${config.name}")
-    String name = "World";
+    @Value("${hello.world}")
+    String name = "Hello World";
 
     @RequestMapping("/")
     public String home() {
-        return "Hello " + name;
+        return name;
     }
 
     public static void main(String[] args) {
-        System.setProperty("spring.cloud.config.uri","http://localhost:8888");
         SpringApplication.run(Application.class, args);
     }
 

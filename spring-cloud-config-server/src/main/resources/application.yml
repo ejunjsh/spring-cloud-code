@@ -1,0 +1,11 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ejunjsh/spring-cloud-code/
+          search-paths: config
