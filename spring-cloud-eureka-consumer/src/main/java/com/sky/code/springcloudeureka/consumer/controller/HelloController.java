@@ -13,7 +13,6 @@ public class HelloController {
 
     @RequestMapping("/hello")
     public String index() {
-         discoveryClient.getNextServerFromEureka("eureka-client",false).;
-        return "hello world";
+        return restTemplate.getForObject("http://SERVICE-PROVIDER/hello",String.class);
     }
 }
