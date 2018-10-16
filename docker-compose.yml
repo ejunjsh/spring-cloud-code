@@ -1,7 +1,42 @@
 version: "3"
 services:
 
-  target:
+  eureka-server:
     image: sjj050121014/jdk8-mvn:1.0
+    hostname: eureka-server
     volumes:
       - .:/root
+    working_dir: /root/spring-cloud-eureka-server
+    command: mvn spring-boot:run -Dspring-boot.run.profiles=docker
+    ports:
+      - 9001:9001
+
+
+  eureka-provider-1:
+      image: sjj050121014/jdk8-mvn:1.0
+      volumes:
+        - .:/root
+      working_dir: /root/spring-cloud-eureka-provider
+      command: mvn spring-boot:run -Dspring-boot.run.profiles=docker
+      depends_on:
+        - eureka-server
+
+  eureka-provider-2:
+      image: sjj050121014/jdk8-mvn:1.0
+      volumes:
+        - .:/root
+      working_dir: /root/spring-cloud-eureka-provider
+      command: mvn spring-boot:run -Dspring-boot.run.profiles=docker
+      depends_on:
+        - eureka-server
+
+  eureka-consumer:
+      image: sjj050121014/jdk8-mvn:1.0
+      volumes:
+        - .:/root
+      working_dir: /root/spring-cloud-eureka-consumer
+      ports:
+            - 9003:9003
+      command: mvn spring-boot:run -Dspring-boot.run.profiles=docker
+      depends_on:
+        - eureka-server
