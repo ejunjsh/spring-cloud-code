@@ -16,6 +16,7 @@ services:
       image: sjj050121014/jdk8-mvn:1.0
       volumes:
         - .:/root
+      hostname: eureka-provider-1
       working_dir: /root/spring-cloud-eureka-provider
       command: mvn spring-boot:run -Dspring-boot.run.profiles=docker
       depends_on:
@@ -25,6 +26,7 @@ services:
       image: sjj050121014/jdk8-mvn:1.0
       volumes:
         - .:/root
+      hostname: eureka-provider-2
       working_dir: /root/spring-cloud-eureka-provider
       command: mvn spring-boot:run -Dspring-boot.run.profiles=docker
       depends_on:
