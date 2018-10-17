@@ -14,6 +14,6 @@ public class HelloController {
     public String index() throws UnknownHostException {
         InetAddress ia = InetAddress.getLocalHost();
 
-        return "hello world and I'm in "+ia.getHostName();
+        return "hello world and this is from "+ia.getHostName();
     }
 }
