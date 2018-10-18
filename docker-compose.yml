@@ -1,6 +1,24 @@
 version: "3"
 services:
 
+  config-client:
+      image: sjj050121014/jdk8-mvn:1.0
+      hostname: config-client
+      volumes:
+        - .:/root
+      working_dir: /root/spring-cloud-config-client
+      command: ["sh","../sleep.sh","20","mvn", "spring-boot:run -Dspring-boot.run.profiles=docker"]
+      ports:
+            - 9200:9200
+
+  config-server:
+      image: sjj050121014/jdk8-mvn:1.0
+      hostname: config-server
+      volumes:
+        - .:/root
+      working_dir: /root/spring-cloud-config-server
+      command: mvn spring-boot:run
+
   eureka-server:
     image: sjj050121014/jdk8-mvn:1.0
     hostname: eureka-server
