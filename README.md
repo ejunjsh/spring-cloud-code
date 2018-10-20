@@ -2,13 +2,18 @@
 
 something code for me to practice the spring-cloud
 
-## spring-cloud-config
-
-## spring-cloud-eureka
+## precondition
 
     sudo docker-compose up
     
-above command will launch a cluster that consist of one eureka server,two providers,one consumer
+above command will launch a cluster that consist of one eureka server,two providers,one consumer,one config server and one config client
+
+
+## spring-cloud-config
+
+you can check config client service `http://[docker host ip]:9200/` to see if it get config from config server
+
+## spring-cloud-eureka
 
 you can check `http://[docker host ip]:9001/eureka` to see the eureka cluster.
 
