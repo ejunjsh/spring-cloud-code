@@ -1,0 +1,1 @@
+sudo docker run --rm -v $PWD:/root sjj050121014/jdk8-mvn:1.0 mvn install

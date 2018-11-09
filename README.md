@@ -4,6 +4,7 @@ something code for me to practice the spring-cloud
 
 ## precondition
 
+    sh mvn.sh
     sudo docker-compose up
     
 above command will launch a cluster that consist of one eureka server,two providers,one consumer,one config server and one config client
@@ -26,3 +27,6 @@ refresh again
     hello world and this is from eureka-provider-1
     
 consumer balances the requests to providers
+
+
+## spring-cloud-hystrix 
