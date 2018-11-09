@@ -7,7 +7,7 @@ services:
       volumes:
         - .:/root
       working_dir: /root/spring-cloud-config-client
-      command: ["sh","../sleep.sh","20","mvn", "spring-boot:run -Dspring-boot.run.profiles=docker"]
+      command: ["sh","../sleep.sh","60","mvn", "spring-boot:run -Dspring-boot.run.profiles=docker"]
       ports:
             - 9200:9200
 
