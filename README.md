@@ -31,3 +31,11 @@ consumer balances the requests to providers
 
 ## spring-cloud-hystrix 
 
+
+visit `http://[docker host ip]:9003/hystrix/error`,`http://[docker host ip]:9003/hystrix/timeout` and `http://[docker host ip]:9003/hystrix/nonresponse`
+
+you will see `server have been crash, try again later.`
+
+above three links show hystrix can deal with exception,timeout and wrong backend server response in hystrix method,
+
+details in [HystrixTestController.java](https://github.com/ejunjsh/spring-cloud-code/blob/master/spring-cloud-eureka-consumer/src/main/java/com/sky/code/springcloudeureka/consumer/controller/HystrixTestController.java)

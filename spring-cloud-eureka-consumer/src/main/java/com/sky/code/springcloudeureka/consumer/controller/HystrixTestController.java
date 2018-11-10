@@ -36,7 +36,7 @@ public class HystrixTestController {
     }
 
     @HystrixCommand(fallbackMethod = "crash")
-    @RequestMapping("/nonrespone")
+    @RequestMapping("/nonresponse")
     public String nonrespone() {
         return restTemplate.getForObject("http://NON-EXISTING-SERVER/hello",String.class);
     }
