@@ -34,7 +34,11 @@ consumer balances the requests to providers
 
 visit `http://[docker host ip]:9003/hystrix/error`,`http://[docker host ip]:9003/hystrix/timeout` and `http://[docker host ip]:9003/hystrix/nonresponse`
 
-you will see `server have been crash, try again later.`
+you will see 
+
+````
+server have been crash, try again later.
+````
 
 above three links show hystrix can deal with exception,timeout and wrong backend server response in hystrix method,
 
